@@ -8,9 +8,9 @@ import co.crisi.wardrobe.wizard.api.domain.validator.decorator.Validator;
 
 import java.util.List;
 
-public record Outfit(Long id, List<IItem> items, Long score, String category) implements IOutfit {
+public record Outfit(Long id, List<IItem> items, Long score, OutfitCategory category) implements IOutfit {
 
-    public Outfit(Long id, List<IItem> items, Long score, String category){
+    public Outfit(Long id, List<IItem> items, Long score, OutfitCategory category){
         var validator = new Validator();
         var nonNullValidator = new NonNullValidatorDecorator(validator);
         var notEmptyValidator = new NotEmptyValidatorDecorator(nonNullValidator);
@@ -32,7 +32,7 @@ public record Outfit(Long id, List<IItem> items, Long score, String category) im
     }
 
     @Override
-    public String getCategory() {
+    public OutfitCategory getCategory() {
         return category;
     }
 

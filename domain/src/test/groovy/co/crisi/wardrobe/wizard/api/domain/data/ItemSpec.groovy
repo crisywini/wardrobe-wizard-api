@@ -1,8 +1,6 @@
-package co.crisi.wardrobe.wizard.api.domain
+package co.crisi.wardrobe.wizard.api.domain.data
 
-import co.crisi.wardrobe.wizard.api.domain.data.Item
-import co.crisi.wardrobe.wizard.api.domain.data.ItemCategory
-import co.crisi.wardrobe.wizard.api.domain.data.ItemType
+
 import co.crisi.wardrobe.wizard.api.exception.validator.NullFieldException
 import spock.lang.Specification
 

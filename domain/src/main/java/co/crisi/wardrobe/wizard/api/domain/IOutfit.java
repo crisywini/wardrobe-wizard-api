@@ -1,5 +1,7 @@
 package co.crisi.wardrobe.wizard.api.domain;
 
+import co.crisi.wardrobe.wizard.api.domain.data.OutfitCategory;
+
 import java.util.List;
 
 public interface IOutfit extends IEntity<Long> {
@@ -8,5 +10,5 @@ public interface IOutfit extends IEntity<Long> {
 
     Long getScore();
 
-    String getCategory();
+    OutfitCategory getCategory();
 }
