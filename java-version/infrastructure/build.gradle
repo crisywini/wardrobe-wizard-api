@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    id 'groovy'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'co.crisi'
@@ -13,6 +16,9 @@ dependencies {
 
     // Domain dependency
     implementation project(':domain')
+
+    testImplementation project(':launcher')
+
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -48,8 +54,21 @@ dependencies {
     testImplementation "org.testcontainers:postgresql:1.20.1"
 
 
+    // postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
+
+    //Spring tests
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.3.2'
+
+    // Spring framework
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Spock Spring
+    testImplementation 'org.spockframework:spock-spring:2.1-groovy-3.0'
 
 }
+
 
 test {
     useJUnitPlatform()
