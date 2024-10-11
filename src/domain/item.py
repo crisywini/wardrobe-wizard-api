@@ -1,15 +1,15 @@
 from pydantic import BaseModel
 
-class Item(BaseModel):
 
-    def __init__(self, name, category, color, style, brand, season):
-        self.id = 0
-        self.name = name
-        self.category = category
-        self.color = color
-        self.style = style
-        self.brand = brand
-        self.season = season
+class Item(BaseModel):
+    id: str
+    name: str
+    category: str
+    color: str
+    style: str
+    brand: str
+    season: str
+    image_url: str
     
     def __str__(self):
         return f"{self.name} ({self.category}, {self.color}, {self.style})"
