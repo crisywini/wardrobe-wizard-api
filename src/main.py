@@ -1,5 +1,6 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from router import item_router, outfit_router
 
 app = FastAPI()
 
@@ -10,7 +11,7 @@ def read_root():
 
 
 @app.post("/upload/")
-async def upload_image(image: UploadFile = File(...)):
+async def upload_item(image: UploadFile = File(...)):
     file_location = f"{image.filename}"
     with open(file_location, "wb+") as file_object:
         file_object.write(image.file.read())
