@@ -35,3 +35,7 @@ async def create_item(file: UploadFile = File(...), item: str = Form(...)):
 @router.get("/items/{item_id}")
 def get_item(item_id: str):
     return item_service.get_by_id(item_id)
+
+@router.delete("/items/{item_id}")
+def delete_item(item_id: str):
+    return item_service.delete_by_id(item_id)

@@ -42,7 +42,7 @@ class ItemRepository():
     
     def delete_one_item(self, id):
         result = self.collection.delete_one({"_id": ObjectId(id)})
-        return  result.deleted_count > 1 
+        return  result.deleted_count >= 1 
 
     def update_one_item(self, id: str, item_update: dict):
 
