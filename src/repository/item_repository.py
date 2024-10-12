@@ -46,10 +46,14 @@ class ItemRepository():
 
     def update_one_item(self, id: str, item_update: dict):
 
-        result = collection.update_one(
+        result = self.collection.update_one(
             {"_id": ObjectId(id)}, 
             {"$set": item_update}  
         )
-        return restult
+        return result
+
+    def get_one_item_by_id(self, id):
+        item = self.collection.find_one({"_id": ObjectId(id)})
+        return item
 
     
