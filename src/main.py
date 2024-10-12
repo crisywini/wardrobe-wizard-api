@@ -15,11 +15,3 @@ app.mount("/images", StaticFiles(directory="static/images"), name="images")
 def read_root():
     return {"Hello": "World"}
 
-
-@app.post("/upload/")
-async def upload_item(image: UploadFile = File(...)):
-    file_location = f"{image.filename}"
-    with open(file_location, "wb+") as file_object:
-        file_object.write(image.file.read())
-    
-    return JSONResponse(content={"filename": image.filename})
