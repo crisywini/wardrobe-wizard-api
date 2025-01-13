@@ -14,14 +14,14 @@ item_repository = ItemRepository(db)
 item_service = ItemService(item_repository)
 
 
-@router.get("/items/")
+@router.get("/items")
 def get_items():
     return item_service.get_all()
 
-@router.post("/items/")
+@router.post("/items")
 async def create_item(file: UploadFile = File(...), item: str = Form(...)):
 
-    file_location = f"static/images/{file.filename}"
+    file_location = f"/Users/cristian.sanchezp/Documents/project/crisi-code-lab/personal/the-wardrobe-grimmerie/public/images/{file.filename}"
     with open(file_location, "wb+") as file_object:
         file_object.write(await file.read())
 
