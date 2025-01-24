@@ -1,11 +1,11 @@
 from pydantic import BaseModel
+from typing import List, Optional
 
 class Outfit(BaseModel):
-    def __init__(self, name):
-        self.name = name
-        self.items = []
-
-    def add_item(self, item):
+    name: str
+    items: List[dict] = []  
+    
+    def add_item(self, item: dict):
         self.items.append(item)
 
     def __str__(self):

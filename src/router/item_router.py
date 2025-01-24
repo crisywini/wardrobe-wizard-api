@@ -4,7 +4,6 @@ from repository.item_repository  import ItemRepository
 from service.item_service  import ItemService
 
 from pymongo import MongoClient
-from bson import ObjectId
 
 router = APIRouter()
 client = MongoClient("mongodb://localhost:27017/")
