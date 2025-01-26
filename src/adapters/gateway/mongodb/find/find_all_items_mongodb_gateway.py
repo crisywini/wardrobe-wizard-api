@@ -1,6 +1,6 @@
 from pymongo.synchronous.database import Database
 
-from src.domain.builders.item_builder import ItemBuilder
+from src.adapters.gateway.mongodb.find.mapper.item_mongodb_mapper import map_to_entity
 from src.ports.gateways.find.find_all_items_gateway import FindAllItemsGateway
 
 
@@ -12,10 +12,4 @@ class FindAllItemsMongoDBGateway(FindAllItemsGateway):
 
     def run(self):
         items_mongodb = self.collection.find()
-        return list(map(self._build_item, items_mongodb))
-
-    def _build_item(self, item):
-        builder = ItemBuilder().set_id(item.get("_id")).set_name(item.get("name")).set_category(
-            item.get("category")).set_color(item.get("color")).set_style(item.get("style")).set_brand(
-            item.get("brand")).set_season(item.get("season")).set_image_url(item.get("image_url"))
-        return builder.build()
+        return list(map(map_to_entity, items_mongodb))
