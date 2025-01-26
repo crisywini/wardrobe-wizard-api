@@ -1,5 +1,5 @@
-from pymongo import MongoClient
 from bson import ObjectId
+from pymongo.synchronous.database import Database
 
 from src.domain.builders.item_builder import ItemBuilder
 from src.domain.builders.outfit_builder import OutfitBuilder
@@ -7,7 +7,7 @@ from src.ports.gateways.find.find_outfit_by_id_gateway import FindOutfitByIdGate
 
 
 class FindOutfitByIdMongoDBGateway(FindOutfitByIdGateway):
-    def __init__(self, mongo_client: MongoClient):
+    def __init__(self, mongo_client: Database):
         self.mongo_client = mongo_client
         self.collection_name = "outfits"
         self.collection = mongo_client[self.collection_name]

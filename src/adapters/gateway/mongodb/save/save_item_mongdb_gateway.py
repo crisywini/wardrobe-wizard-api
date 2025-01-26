@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo.synchronous.database import Database
 
 from src.domain.builders.item_builder import ItemBuilder
 from src.domain.entities.item import Item
@@ -6,7 +6,7 @@ from src.ports.gateways.save.save_item_gateway import SaveItemGateway
 
 
 class SaveItemMongoDBGateway(SaveItemGateway):
-    def __init__(self, mongo_client: MongoClient):
+    def __init__(self, mongo_client: Database):
         self.mongo_client = mongo_client
         self.collection_name = "items"
         self.collection = mongo_client[self.collection_name]

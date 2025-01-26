@@ -1,11 +1,11 @@
-from pymongo import MongoClient
+from pymongo.synchronous.database import Database
 
 from src.domain.builders.outfit_builder import OutfitBuilder
 from src.ports.gateways.find.find_all_outfits_gateway import FindAllOutfitsGateway
 
 
 class FindAllOutfitsMongoDBGateway(FindAllOutfitsGateway):
-    def __init__(self, mongo_client: MongoClient):
+    def __init__(self, mongo_client: Database):
         self.mongo_client = mongo_client
         self.collection_name = "outfits"
         self.collection = mongo_client[self.collection_name]

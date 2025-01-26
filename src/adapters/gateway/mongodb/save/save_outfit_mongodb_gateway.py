@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo.synchronous.database import Database
 
 from src.domain.builders.outfit_builder import OutfitBuilder
 from src.domain.entities.outfit import Outfit
@@ -6,7 +6,7 @@ from src.ports.gateways.save.save_outfit_gateway import SaveOutfitGateway
 
 
 class SaveOutfitMongoDBGateway(SaveOutfitGateway):
-    def __init__(self, mongo_client: MongoClient):
+    def __init__(self, mongo_client: Database):
         self.mongo_client = mongo_client
         self.collection_name = "outfits"
         self.collection = mongo_client[self.collection_name]
