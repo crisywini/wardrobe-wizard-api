@@ -9,3 +9,9 @@ Wardrobe-Wizard-API is the backend for an innovative fashion application inspire
 Use uvicorn in the root folder, even if you make changes in the code, the flag reload will help you re running the changes 
 
     uvicorn src.main:app --reload --port 5000
+
+
+### Architecture
+
+
+We are using clean architecture and FastAPI as our web framework
