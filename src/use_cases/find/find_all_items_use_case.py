@@ -6,4 +6,4 @@ class FindAllItemsUseCase:
         self.gateway = gateway
 
     def run(self):
-        self.gateway.run()
+        return self.gateway.run()

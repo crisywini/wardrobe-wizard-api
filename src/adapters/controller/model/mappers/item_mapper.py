@@ -21,3 +21,6 @@ def map_to_dto(item: Item):
         season=item.season,
         image_url=item.image_url
     )
+
+def map_to_dtos(items):
+    return list(map(lambda item: map_to_dto(item), items))
