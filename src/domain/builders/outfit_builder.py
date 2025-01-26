@@ -1,5 +1,5 @@
+from src.domain.builders.builder import Builder
 from src.domain.entities.outfit import Outfit
-from builder import Builder 
 
 class OutfitBuilder(Builder):
     

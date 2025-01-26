@@ -1,4 +1,4 @@
-from builder import Builder
+from src.domain.builders.builder import Builder
 from src.domain.entities.item import Item
 
 class ItemBuilder(Builder):
