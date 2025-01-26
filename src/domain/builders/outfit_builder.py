@@ -9,19 +9,19 @@ class OutfitBuilder(Builder):
         self.items = []
         self.category = ""
         
-    def id(self, id):
+    def set_id(self, id):
         self.id = id
         return self
 
-    def name(self, name):
+    def set_name(self, name):
         self.name = name
         return self 
 
-    def items(self, items):
+    def set_items(self, items):
         self.items = items
         return self
 
-    def category(self, category):
+    def set_category(self, category):
         self.category = category
         return self
 
