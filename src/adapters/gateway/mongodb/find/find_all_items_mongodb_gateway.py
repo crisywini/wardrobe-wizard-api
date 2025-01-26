@@ -12,8 +12,18 @@ class FindAllItemsMongoDBGateway(FindAllItemsGateway):
 
     def run(self):
         items_mongodb = self.collection.find()
-        return list(map(lambda item: ItemBuilder.set_id(item.get("_id")).set_name(item.get("name")).set_category(
-            item.get("category")).set_color(
-            item.get("color")).set_style(item.get("style")).set_brand(item.get("brand")).set_season(
-            item.get("season")).set_image_url(
-            item.get("image_url")).build(), items_mongodb))
+        return  list(map(self._build_item, items_mongodb))
+
+    def _build_item(self, item):
+        builder = ItemBuilder()
+        builder.set_id(item.get("_id"))
+        builder.set_name(item.get("name"))
+        builder.set_category(item.get("category"))
+        builder.set_color(item.get("color"))
+        builder.set_style(item.get("style"))
+        builder.set_brand(item.get("brand"))
+        builder.set_season(item.get("season"))
+        builder.set_image_url(item.get("image_url"))
+        return builder.build()
+
+
