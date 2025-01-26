@@ -10,6 +10,6 @@ mongodb_instance = get_mongodb_instance()
 find_all_items_mongodb_gateway = FindAllItemsMongoDBGateway(mongodb_instance)
 find_all_items_use_case = FindAllItemsUseCase(find_all_items_mongodb_gateway)
 
-@router.get("/items")
+@router.get(path="/items")
 def get_items():
     return find_all_items_use_case.run()
