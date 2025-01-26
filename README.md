@@ -6,6 +6,6 @@ Wardrobe-Wizard-API is the backend for an innovative fashion application inspire
 
 ### How to start the App
 
-Use uvicorn and the correct location, even if you make changes in the code, the flag reload will help you re running the changes 
+Use uvicorn in the root folder, even if you make changes in the code, the flag reload will help you re running the changes 
 
-    uvicorn main:app --reload --port 5000
+    uvicorn src.main:app --reload --port 5000
