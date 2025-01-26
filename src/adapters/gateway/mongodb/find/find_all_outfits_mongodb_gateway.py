@@ -12,7 +12,6 @@ class FindAllOutfitsMongoDBGateway(FindAllOutfitsGateway):
 
     def run(self):
         outfits_mongodb = self.collection.find()
-        outfits = list(
+        return list(
             map(lambda outfit: OutfitBuilder.set_id(outfit.get("id")).set_name(outfit.get("name")).set_category(
                 outfit.get("category")).set_items(outfit.get("items")).build(), outfits_mongodb))
-        return outfits
