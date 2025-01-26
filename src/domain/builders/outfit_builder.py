@@ -7,6 +7,7 @@ class OutfitBuilder(Builder):
         self.id = "id"
         self.name = "name"
         self.items = []
+        self.category = ""
         
     def id(self, id):
         self.id = id
@@ -18,6 +19,10 @@ class OutfitBuilder(Builder):
 
     def items(self, items):
         self.items = items
+        return self
+
+    def category(self, category):
+        self.category = category
         return self
 
     def build(self):
