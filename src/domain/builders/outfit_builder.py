@@ -10,7 +10,7 @@ class OutfitBuilder(Builder):
         self.category = ""
         
     def set_id(self, id):
-        self.id = id
+        self.id = str(id)
         return self
 
     def set_name(self, name):
