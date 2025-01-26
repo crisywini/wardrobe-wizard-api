@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 
 class OutfitDto(BaseModel):
-    id: str
+    id: str = None
     name: str
     category: str
     items: List[dict] = []  
@@ -13,6 +13,3 @@ class OutfitDto(BaseModel):
     def __str__(self):
         return f"Outfit: {self.name} with {len(self.items)} items"
 
-    def show_outfit(self):
-        for item in self.items:
-            print(item)

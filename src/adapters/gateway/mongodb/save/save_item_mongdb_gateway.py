@@ -22,6 +22,6 @@ class SaveItemMongoDBGateway(SaveItemGateway):
             "image_url": item.image_url
         }
         item_id = self.collection.insert_one(item_dict).inserted_id
-        return ItemBuilder.set_id(item_id).set_name(item.name).set_category(item.category).set_color(
+        return ItemBuilder().set_id(item_id).set_name(item.name).set_category(item.category).set_color(
             item.color).set_style(item.style).set_brand(item.brand).set_season(item.season).set_image_url(
             item.image_url).build()
