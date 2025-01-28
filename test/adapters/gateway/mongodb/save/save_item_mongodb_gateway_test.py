@@ -13,7 +13,6 @@ def mongodb_container():
 
 
 def test_mongodb_connection(mongodb_container):
-    print(mongodb_container)
     client = MongoClient(mongodb_container)
     db = client["wardrobe_db"]
     collection = db["items"]
