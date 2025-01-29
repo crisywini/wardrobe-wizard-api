@@ -12,7 +12,7 @@ def mongodb_container():
         yield mongo.get_connection_url()
 
 
-def test_mongodb_connection(mongodb_container):
+def test_register_item_happy_path(mongodb_container):
     client = MongoClient(mongodb_container)
     db = client["wardrobe_db"]
     collection = db["items"]

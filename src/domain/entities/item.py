@@ -12,3 +12,15 @@ class Item:
         
     def __str__(self):
         return f"Item(id={self.id}, name={self.name}, category={self.category}, color={self.color}, style={self.style}, brand={self.brand}, season={self.season}, image_url={self.image_url})"
+
+    def to_dict(self):
+        return {
+            "id": str(self.id),
+            "name": self.name,
+            "category": self.category,
+            "color": self.color,
+            "style": self.style,
+            "brand": self.brand,
+            "season": self.season,
+            "image_url": self.image_url
+        }
