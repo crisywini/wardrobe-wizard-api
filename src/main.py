@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from src.adapters.controller.register import register_item_controller, register_outfit_controller
 from src.adapters.controller.extract import extract_all_items_controller, extract_all_outfits_controller, \
-    extract_outfit_by_id_controller, extract_item_by_id_controller
-from fastapi.staticfiles import StaticFiles
+    extract_outfit_by_id_controller, extract_item_by_id_controller, extract_all_outfit_categories_controller
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -12,6 +11,7 @@ app.include_router(extract_item_by_id_controller.router)
 app.include_router(extract_all_items_controller.router)
 app.include_router(extract_outfit_by_id_controller.router)
 app.include_router(extract_all_outfits_controller.router)
+app.include_router(extract_all_outfit_categories_controller.router)
 
 app.add_middleware(
     CORSMiddleware,

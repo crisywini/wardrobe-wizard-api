@@ -11,6 +11,6 @@ find_all_outfits_mongodb_gateway = FindAllOutfitsMongoDBGateway(mongodb_instance
 find_all_outfits_categories_use_case = FindAllOutfitCategoriesUseCase(find_all_outfits_mongodb_gateway)
 
 
-@router.get(path="/outfits/categories")
+@router.get(path="/categories/outfits")
 def get_all_outfits():
     return find_all_outfits_categories_use_case.run()
