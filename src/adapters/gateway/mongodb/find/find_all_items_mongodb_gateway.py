@@ -10,6 +10,6 @@ class FindAllItemsMongoDBGateway(FindAllItemsGateway):
         self.collection_name = "items"
         self.collection = mongo_client[self.collection_name]
 
-    def run(self):
+    def run(self) -> list:
         items_mongodb = self.collection.find()
         return list(map(map_to_entity, items_mongodb))
