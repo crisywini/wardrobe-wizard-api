@@ -24,7 +24,7 @@ class FindItemByIdMongoDBGateway(FindItemByIdGateway):
             brand = item.get("brand")
             season = item.get("season")
             image_url = item.get("image_url")
-            return ItemBuilder.set_id(id_mongo).set_name(name).set_category(category).set_color(
+            return ItemBuilder().set_id(id_mongo).set_name(name).set_category(category).set_color(
                 color).set_style(style).set_brand(brand).set_season(season).set_image_url(
                 image_url).build()
         else:
