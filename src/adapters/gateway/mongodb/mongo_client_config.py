@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import os
 
 client = None
 mongo_db_instance = None
@@ -6,7 +7,8 @@ mongo_db_instance = None
 def get_mongodb_client():
     global client
     if client is None:
-        client = MongoClient("mongodb://localhost:27017/")
+        mongo_url = os.getenv("MONGO_URL", "mongodb://mongo:27017/wardrobe_db")
+        client = MongoClient(mongo_url)
     return client
 
 def get_mongodb_instance():
