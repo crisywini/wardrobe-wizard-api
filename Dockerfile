@@ -12,5 +12,5 @@ RUN pip install --no-cache-dir -r /src/requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT ["/src/run.sh"]
+ENTRYPOINT ["/bin/bash", "/src/run.sh"]
 
