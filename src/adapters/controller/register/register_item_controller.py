@@ -22,11 +22,10 @@ async def register_item(file: UploadFile = File(...), item: str = Form(...)):
         file_object.write(await file.read())
 
     item_data = ItemDto.model_validate_json(item)
-    item_data.image_url = f"/images/{file.filename}"
+    item_data.image_url = f"{URL_IMAGE_DEFAULT_FE_PATH}/{file.filename}"
 
     entity = save_item_use_case.run(map_to_entity(item_data))
-
     return JSONResponse(
         status_code=201,
-        content=map_to_dto(entity)
+        content=map_to_dto(entity).model_dump()
     )
