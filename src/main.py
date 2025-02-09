@@ -1,4 +1,8 @@
+import os
 from fastapi import FastAPI
+from starlette.staticfiles import StaticFiles
+
+from src.adapters.controller.config.constants import UPLOAD_FOLDER
 from src.adapters.controller.register import register_item_controller, register_outfit_controller
 from src.adapters.controller.extract import extract_all_items_controller, extract_all_outfits_controller, \
     extract_outfit_by_id_controller, extract_item_by_id_controller, extract_all_outfit_categories_controller
@@ -21,7 +25,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-#app.mount("/images", StaticFiles(directory="static/images"), name="images")
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
+
+app.mount("/images", StaticFiles(directory=UPLOAD_FOLDER), name="images")
 
 
 @app.get("/")
