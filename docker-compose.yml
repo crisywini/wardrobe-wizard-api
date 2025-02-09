@@ -9,6 +9,7 @@ services:
       - MONGO_URL=mongodb://mongo:27017/wardrobe_db
     volumes:
       - .:/src
+      - ./images:/app/images
 
   mongo:
     image: mongo:latest
