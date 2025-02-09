@@ -20,7 +20,7 @@ def mongodb_container():
 
 
 def test_save_outfit_with_correct_items_will_create_default_image(mongodb_container):
-    constant.URL_IMAGE_DEFAULT_FE_PATH = os.path.join(os.path.dirname(__file__), "../../resources")
+    constant.UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), "../../resources")
     client = MongoClient(mongodb_container)
     db = client["wardrobe_db"]
     gateway = SaveOutfitMongoDBGateway(db)

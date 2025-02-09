@@ -1,2 +1,1 @@
-URL_IMAGE_DEFAULT_FE_PATH="/Users/cristian.sanchezp/Documents/project/crisi-code-lab/personal/the-wardrobe-grimmerie/public/images/"
 UPLOAD_FOLDER="images"

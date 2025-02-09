@@ -15,7 +15,7 @@ class SaveOutfitUseCase:
         shoes = list(filter(lambda i: i["category"] == 'shoes', outfit.items))[0]
         file_name = outfit.name + ".png"
         self.concatenate_images_vertically_use_case.run([shirt["image_url"], pants["image_url"], shoes["image_url"]],
-                                                        f"{constant.URL_IMAGE_DEFAULT_FE_PATH}/{file_name}")
-        outfit.default_image_url = f"{constant.URL_IMAGE_DEFAULT_FE_PATH}/{file_name}"
+                                                        f"{constant.UPLOAD_FOLDER}/{file_name}")
+        outfit.default_image_url = f"{constant.UPLOAD_FOLDER}/{file_name}"
 
         return self.gateway.run(outfit)
