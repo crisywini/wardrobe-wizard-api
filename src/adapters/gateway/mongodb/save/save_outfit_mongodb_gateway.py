@@ -15,8 +15,9 @@ class SaveOutfitMongoDBGateway(SaveOutfitGateway):
         outfit_dict = {
             "name": outfit.name,
             "category": outfit.category,
-            "items": outfit.items
+            "items": outfit.items,
+            "default_image_url": outfit.default_image_url
         }
         outfit_id = self.collection.insert_one(outfit_dict).inserted_id
         return OutfitBuilder().set_id(outfit_id).set_name(outfit.name).set_items(outfit.items).set_category(
-            outfit.category)
+            outfit.category).set_default_image_url(outfit.default_image_url)
