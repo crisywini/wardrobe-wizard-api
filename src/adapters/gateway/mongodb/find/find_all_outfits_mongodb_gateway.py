@@ -12,6 +12,4 @@ class FindAllOutfitsMongoDBGateway(FindAllOutfitsGateway):
 
     def run(self):
         outfits_mongodb = self.collection.find()
-        return list(
-            map(map_to_entity, outfits_mongodb))
-
+        return list(map(map_to_entity, outfits_mongodb))

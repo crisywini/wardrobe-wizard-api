@@ -31,4 +31,4 @@ class OutfitBuilder(Builder):
         return self
 
     def build(self):
-        return Outfit(self.id, self.name, self.items, self.category)
+        return Outfit(self.id, self.name, self.items, self.category, self.default_image_url)
