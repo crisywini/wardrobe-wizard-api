@@ -21,5 +21,5 @@ find_all_outfits_by_category_use_case = FindAllOutfitsByCategoryUseCase(find_all
 @router.get(path="/outfits")
 def get_all_outfits(category: Optional[str] = Query(None)):
     if category:
-        return find_all_outfits_by_category_mongodb_gateway.run(category)
+        return find_all_outfits_by_category_use_case.run(category)
     return find_all_outfits_use_case.run()

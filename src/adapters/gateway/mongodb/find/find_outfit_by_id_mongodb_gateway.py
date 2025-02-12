@@ -19,9 +19,11 @@ class FindOutfitByIdMongoDBGateway(FindOutfitByIdGateway):
             name = outfit.get("name")
             category = outfit.get("category")
             items = []
+            default_image_url = outfit.get("default_image_url")
             for item in outfit["items"]:
                 items.append(self._build_item(item))
-            return OutfitBuilder.set_id(id_mongo).set_name(name).set_category(category).set_items(items)
+            return OutfitBuilder.set_id(id_mongo).set_name(name).set_default_image_url(default_image_url).set_category(
+                category).set_items(items)
         else:
             return None
 
