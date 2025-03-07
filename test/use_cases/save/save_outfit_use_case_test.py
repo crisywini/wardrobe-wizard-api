@@ -41,9 +41,9 @@ def save_items(db):
     shirt = ItemBuilder().set_name("Green true shirt").set_category("shirts").set_color("green").set_style(
         "sportive").set_brand("True").set_season("2024").set_image_url(
         os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources/true_shirt.png"))).build()
-    pants = ItemBuilder().set_name("Blue jeans").set_category("pants").set_color("blue").set_style(
-        "Jeans").set_brand("nike").set_season("2024").set_image_url(
-        os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources/jeans_koaj.png"))).build()
+    pants = ItemBuilder().set_name("Coffee jeans").set_category("pants").set_color("blue").set_style(
+        "Jeans").set_brand("koaj").set_season("2024").set_image_url(
+        os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources/coffee_pants.jpg"))).build()
     shoes = ItemBuilder().set_name("white shoes").set_category("shoes").set_color("white").set_style(
         "sportive").set_brand("new balance").set_season("2024").set_image_url(
         os.path.abspath(os.path.join(os.path.dirname(__file__), "../../resources/new_balance_shoes.png"))).build()
