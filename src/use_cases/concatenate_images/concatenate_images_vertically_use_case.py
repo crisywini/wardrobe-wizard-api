@@ -4,8 +4,6 @@ from PIL import Image, ExifTags
 class ConcatenateImagesVerticallyUseCase:
 
     def run(self, image_paths, output_path):
-        #images = [Image.open(img) for img in image_paths]
-
         images = []
 
         for img_path in image_paths:
