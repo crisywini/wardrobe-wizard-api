@@ -1,6 +1,4 @@
-
-
-class DeleteById():
+class DeleteById:
     
     def run(self, id):
         pass
