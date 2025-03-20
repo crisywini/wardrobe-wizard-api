@@ -14,4 +14,4 @@ Use uvicorn in the root folder, even if you make changes in the code, the flag r
 ### Architecture
 
 
-We are using clean architecture and FastAPI as our web framework
+We are using clean architecture and FastAPI as our web framework, you can read our documentation and folders structure in the specification_readme.md
