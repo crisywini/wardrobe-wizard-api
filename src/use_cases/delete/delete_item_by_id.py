@@ -1,5 +1,5 @@
 from delete_interface import DeleteById
-from gateways.delete_item_by_id_gateway import DeleteItemByIdGateway
+from src.ports.gateways.delete.delete_item_by_id_gateway import DeleteItemByIdGateway
 
 class DeleteItemById(DeleteById):
     
@@ -7,5 +7,3 @@ class DeleteItemById(DeleteById):
     def __init__(self, item_gateway: DeleteItemByIdGateway):
         self.item_gateway = item_gateway
         
-    
-    def 
